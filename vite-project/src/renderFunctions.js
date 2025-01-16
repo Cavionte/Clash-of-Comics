@@ -5,6 +5,7 @@ export const renderCharacters = (charList, fighters) => {
     listItem.classList.add("character-card");
 
     const img = document.createElement("img");
+
     img.src = char.smallImg;
     img.alt = char.name;
     listItem.appendChild(img);
@@ -37,9 +38,11 @@ export const renderCharacters = (charList, fighters) => {
     });
 
     const playerOneButton = document.createElement("button");
+    playerOneButton.classList.add("player-one");
     playerOneButton.textContent = "Select Player 1";
     listItem.appendChild(playerOneButton);
     const playerTwoButton = document.createElement("button");
+    playerTwoButton.classList.add("player-two");
     playerTwoButton.textContent = "Select Player 2";
     listItem.appendChild(playerTwoButton);
 

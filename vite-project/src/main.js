@@ -5,8 +5,8 @@ import { renderCharacters } from "./renderFunctions";
 
 document.querySelector("#app").innerHTML = `
   <header>Clash of Comics</header>
-   <div id="playerone"></div>
-   <div id="playertwo"></div>
+   <div id="playerone"><img src="" alt=""></div>
+   <div id="playertwo"><img src="" alt=""></div>
    <button>FIGHT!</button>
    <button>Search</button>
    <div id="fighters"><ul></ul></div>
