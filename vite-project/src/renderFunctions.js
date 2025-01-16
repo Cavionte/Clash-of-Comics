@@ -46,3 +46,5 @@ export const renderCharacters = (charList, fighters) => {
     charList.appendChild(listItem);
   });
 };
+
+

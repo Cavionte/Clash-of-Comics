@@ -1,5 +1,5 @@
 import "./style.css";
-import { fetchCharacters } from "./fetchFunctions";
+import { fetchCharacters, getIndividualCharacter } from "./fetchFunctions";
 
 import { renderCharacters } from "./renderFunctions";
 
@@ -18,8 +18,9 @@ const main = () => {
       renderCharacters(charList, char);
     })
     .catch((error) => {
-      console.error("Looks like your alone in this one.", error);
+      console.error("Looks like you're alone in this one.", error);
     });
-};
+      getIndividualCharacter(1);
+  };
 
 main();
