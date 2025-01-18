@@ -1,8 +1,11 @@
+import { getIndividualCharacter } from "./fetchFunctions";
+
 export const renderCharacters = (charList, fighters) => {
   charList.innerHTML = ""; // Clear existing list
   fighters.forEach((char) => {
     const listItem = document.createElement("li"); // Correctly create "li" element
     listItem.classList.add("character-card");
+    listItem.dataset.id = char.id;
 
     const img = document.createElement("img");
 
@@ -40,12 +43,44 @@ export const renderCharacters = (charList, fighters) => {
     const playerOneButton = document.createElement("button");
     playerOneButton.classList.add("player-one");
     playerOneButton.textContent = "Select Player 1";
+    playerOneButton.dataset.id = char.id;
+    // playerOneButton.addEventListener("click", () => {
+    //   getIndividualCharacter(char.id).then(
+    //     renderPlayerOne(playerOneDiv, fighter)
+    //   );
+    // });
+
     listItem.appendChild(playerOneButton);
     const playerTwoButton = document.createElement("button");
     playerTwoButton.classList.add("player-two");
     playerTwoButton.textContent = "Select Player 2";
+    playerTwoButton.dataset.id = char.id;
     listItem.appendChild(playerTwoButton);
 
     charList.appendChild(listItem);
   });
+};
+
+export const renderPlayerOne = (playerOneDiv, fighter) => {
+  playerOneDiv.innerHTML = "";
+  let fighterImg = document.createElement("img");
+  fighterImg.src = fighter.stats.img;
+  fighterImg.alt = fighter.name;
+  playerOneDiv.appendChild(fighterImg);
+
+  let fightersName = document.createElement("h2");
+  fightersName.textContent = fighter.name;
+  playerOneDiv.appendChild(fightersName);
+};
+
+export const renderPlayerTwo = (playerTwoDiv, fighter) => {
+  playerTwoDiv.innerHTML = "";
+  let fighterImg = document.createElement("img");
+  fighterImg.src = fighter.stats.img;
+  fighterImg.alt = fighter.name;
+  playerTwoDiv.appendChild(fighterImg);
+
+  let fightersName = document.createElement("h2");
+  fightersName.textContent = fighter.name;
+  playerTwoDiv.appendChild(fightersName);
 };

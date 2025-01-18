@@ -94,6 +94,18 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+#players-container {
+  display: flex;
+  justify-content: space-around; /* Space out the players evenly */
+  align-items: center; /* Align players vertically in the center */
+  margin: 20px 0;
+}
+
+.selected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 #fighters ul {
   display: flex;
