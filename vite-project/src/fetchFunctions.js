@@ -9,6 +9,7 @@ export const fetchCharacters = () => {
       return response.json();
     })
     .then((heroes) => {
+      console.log({ heroes });
       const fighters = heroes.map((hero) => ({
         id: hero.id,
         name: hero.name,
