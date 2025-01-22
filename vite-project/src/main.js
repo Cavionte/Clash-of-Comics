@@ -11,9 +11,6 @@ import {
 
 document.querySelector("#app").innerHTML = `
   <header>Clash of Comics</header>
-   <button id="finder">Search</button>
-   <label for="site-search">Find Your Fighter:</label>
-  <input type="text" id="site-search" placeholder="Put Character Here" name="q" />
    <div id="players-container">
       <div id="playerone" class='selected'>
       <img src="src/images/squareup.jpg" alt="placeholder fighter meme" id="placeholder1">
