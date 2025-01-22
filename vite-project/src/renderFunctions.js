@@ -1,4 +1,5 @@
 import { getIndividualCharacter } from "./fetchFunctions";
+import { fetchCharacters } from "./fetchFunctions";
 
 export const renderCharacters = (charList, fighters) => {
   charList.innerHTML = ""; // Clear existing list
@@ -236,3 +237,5 @@ export const renderBattle = (openButton, fightDiv) => {
 // } else {
 //   console.error("Open button or fight container is missing.");
 // }
+
+

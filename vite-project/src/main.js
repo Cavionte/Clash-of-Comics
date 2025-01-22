@@ -1,6 +1,7 @@
 import "./style.css";
 import { fetchCharacters, getIndividualCharacter } from "./fetchFunctions";
 
+
 import {
   renderBattle,
   renderCharacters,
@@ -10,12 +11,9 @@ import {
 
 document.querySelector("#app").innerHTML = `
   <header>Clash of Comics</header>
-   <div id="playerone"></div>
-   <div id="playertwo"></div>
-   <button>FIGHT!</button>
    <button id="finder">Search</button>
    <label for="site-search">Find Your Fighter:</label>
-  <input type="text" id="site-search" name="q" />
+  <input type="text" id="site-search" placeholder="Put Character Here" name="q" />
    <div id="players-container">
       <div id="playerone" class='selected'>
       <img src="src/images/squareup.jpg" alt="placeholder fighter meme" id="placeholder1">
@@ -28,7 +26,7 @@ document.querySelector("#app").innerHTML = `
       </div>
     </div>
    <button id="start">FIGHT!</button>
-   <button>Search</button>
+   
    <div id="fighters"><ul></ul></div>
 `;
 const charList = document.querySelector("#fighters ul");
@@ -38,7 +36,7 @@ const fightDiv = document.querySelector("#app");
 const openButton = document.querySelector("#start");
 const fighterOne = document.querySelector("#fighter-one");
 const fighterTwo = document.querySelector("#fighter-two");
-const main = () => {
+const main = async() => {
   fetchCharacters()
     .then((char) => {
       renderCharacters(charList, char);
@@ -88,21 +86,22 @@ const main = () => {
   const winner = document.getElementById("winner");
 
   // Start the animation
-  setTimeout(() => {
+  // setTimeout(() => {
     // Remove fighters after collision
-    fighterOne.style.transition = "opacity 1s";
-    fighterTwo.style.transition = "opacity 1s";
-    fighterOne.style.opacity = 0;
-    fighterTwo.style.opacity = 0;
+    //fighterOne.style.transition = "opacity 1s";
+    //fighterTwo.style.transition = "opacity 1s";
+   // fighterOne.style.opacity = 0;
+   // fighterTwo.style.opacity = 0;
 
     // Show the winner after 3 seconds
-    setTimeout(() => {
-      fighterOne.style.display = "none";
-      fighterTwo.style.display = "none";
-      winner.classList.remove("hidden");
-      winner.style.opacity = 1; // Fade-in effect
-    }, 3000); // Wait for the collision animation to finish
-  }, 2000); // Start after fighters collide
+    //setTimeout(() => {
+      //fighterOne.style.display = "none";
+      //fighterTwo.style.display = "none";
+     // winner.classList.remove("hidden");
+     // winner.style.opacity = 1; // Fade-in effect
+  //  }, 3000); // Wait for the collision animation to finish
+ // }, 2000); // Start after fighters collide
 };
+
 
 main();
