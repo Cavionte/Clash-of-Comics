@@ -2,6 +2,7 @@ import "./style.css";
 import { fetchCharacters, getIndividualCharacter } from "./fetchFunctions";
 
 import {
+  renderBattle,
   renderCharacters,
   renderPlayerOne,
   renderPlayerTwo,
@@ -10,17 +11,27 @@ import {
 document.querySelector("#app").innerHTML = `
   <header>Clash of Comics</header>
    <div id="players-container">
-      <div id="playerone" class='selected'></div>
+      <div id="playerone" class='selected'>
+      <img src="src/images/squareup.jpg" alt="placeholder fighter meme" id="placeholder1">
+      <h2>Select Fighter</h2>
+      </div>
       <img src="src/images/vs.gif" alt="VS" id="vs-image">
-      <div id="playertwo" class='selected'></div>
+      <div id="playertwo" class='selected'>
+      <img src="src/images/squareup.jpg" alt="placeholder fighter meme" id="placeholder2">
+      <h2>Select Fighter</h2>
+      </div>
     </div>
-   <button>FIGHT!</button>
+   <button id="start">FIGHT!</button>
    <button>Search</button>
    <div id="fighters"><ul></ul></div>
 `;
 const charList = document.querySelector("#fighters ul");
 const playerOneDiv = document.querySelector("#playerone");
 const playerTwoDiv = document.querySelector("#playertwo");
+const fightDiv = document.querySelector("#app");
+const openButton = document.querySelector("#start");
+const fighterOne = document.querySelector("#fighter-one");
+const fighterTwo = document.querySelector("#fighter-two");
 const main = () => {
   fetchCharacters()
     .then((char) => {
@@ -45,7 +56,7 @@ const main = () => {
     if (e.target.matches(".player-one")) {
       const id = e.target.dataset.id;
       getIndividualCharacter(id)
-        .then((fighter) => renderPlayerOne(playerOneDiv, fighter))
+        .then((fighter) => renderPlayerOne(fighterOne, playerOneDiv, fighter))
         .catch((error) => {
           console.error("Looks like the this fighter called out.", error);
         });
@@ -56,12 +67,36 @@ const main = () => {
     if (e.target.matches(".player-two")) {
       const id = e.target.dataset.id;
       getIndividualCharacter(id)
-        .then((fighter) => renderPlayerTwo(playerTwoDiv, fighter))
+        .then((fighter) => renderPlayerTwo(fighterTwo, playerTwoDiv, fighter))
         .catch((error) => {
           console.error("Looks like the this fighter called out.", error);
         });
     }
   });
+  openButton.addEventListener("click", () => {
+    renderBattle(openButton, fightDiv);
+  });
+  // Animations
+  const fighterOne = document.getElementById("fighterOne");
+  const fighterTwo = document.getElementById("fighterTwo");
+  const winner = document.getElementById("winner");
+
+  // Start the animation
+  setTimeout(() => {
+    // Remove fighters after collision
+    fighterOne.style.transition = "opacity 1s";
+    fighterTwo.style.transition = "opacity 1s";
+    fighterOne.style.opacity = 0;
+    fighterTwo.style.opacity = 0;
+
+    // Show the winner after 3 seconds
+    setTimeout(() => {
+      fighterOne.style.display = "none";
+      fighterTwo.style.display = "none";
+      winner.classList.remove("hidden");
+      winner.style.opacity = 1; // Fade-in effect
+    }, 3000); // Wait for the collision animation to finish
+  }, 2000); // Start after fighters collide
 };
 
 main();
