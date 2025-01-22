@@ -45,6 +45,16 @@ export const renderCharacters = (charList, fighters) => {
 
     charList.appendChild(listItem);
   });
-};
 
+  const searchInput = document.getElementById("site-search")
+  let users = [];
+
+  searchInput.addEventListener("input", e => {
+    const value = e.target.value.toLowerCase()
+    
+   const searchNames = users.filter(user => {
+      return user.name.toLowerCase().includes(value)
+    })
+  })
+};
 

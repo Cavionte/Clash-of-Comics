@@ -8,7 +8,9 @@ document.querySelector("#app").innerHTML = `
    <div id="playerone"></div>
    <div id="playertwo"></div>
    <button>FIGHT!</button>
-   <button>Search</button>
+   <button id="finder">Search</button>
+   <label for="site-search">Find Your Fighter:</label>
+  <input type="text" id="site-search" name="q" />
    <div id="fighters"><ul></ul></div>
 `;
 const charList = document.querySelector("#fighters ul");
