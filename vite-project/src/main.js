@@ -55,6 +55,7 @@ const main = async () => {
   document.addEventListener("click", (e) => {
     if (e.target.matches(".player-one")) {
       const id = e.target.dataset.id;
+
       getIndividualCharacter(id)
         .then((fighter) => renderPlayerOne(fighterOne, playerOneDiv, fighter))
         .catch((error) => {
@@ -66,6 +67,7 @@ const main = async () => {
   document.addEventListener("click", (e) => {
     if (e.target.matches(".player-two")) {
       const id = e.target.dataset.id;
+
       getIndividualCharacter(id)
         .then((fighter) => renderPlayerTwo(fighterTwo, playerTwoDiv, fighter))
         .catch((error) => {
@@ -81,6 +83,13 @@ const main = async () => {
   const fighterTwo = document.getElementById("fighterTwo");
   const winner = document.getElementById("winner");
   const cartoon = document.getElementsByClassName("the-fight");
+
+  // const button = document.querySelectorAll(".player-one");
+
+  // button.addEventListener("click", () => {
+  //   button.classList.toggle("clicked");
+  // });
+
   // Start the animation
 };
 

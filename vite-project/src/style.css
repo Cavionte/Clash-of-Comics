@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: rgb(52, 52, 52);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -49,6 +49,7 @@ h1 {
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
+  background-color: red;
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
@@ -72,12 +73,15 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #f2c645;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
   border-color: #646cff;
+}
+button:active {
+  background-color: greenyellow;
 }
 button:focus,
 button:focus-visible {
@@ -87,13 +91,13 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: gray;
   }
   a:hover {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #5f0a0a;
   }
 }
 
@@ -309,6 +313,15 @@ button:focus-visible {
 .character-card button:hover {
   background: #0056b3;
 }
+.character-card button:active {
+  background-color: greenyellow;
+}
+/* .player-two.clicked {
+  background-color: greenyellow;
+}
+.player-one.clicked {
+  background-color: greenyellow;
+} */
 
 dialog {
   border: none;
@@ -316,13 +329,14 @@ dialog {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
-  color: whitesmoke;
+  color: black;
+  background-color: #5c5959;
 }
 
 dialog ul {
   list-style: none;
   padding: 0;
-  color: white;
+  color: black;
 }
 
 dialog button {
