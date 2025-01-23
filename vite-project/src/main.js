@@ -22,7 +22,7 @@ document.querySelector("#app").innerHTML = `
       </div>
     </div>
    <button id="start">FIGHT!</button>
-   <button>Search</button>
+   
    <div id="fighters"><ul></ul></div>
 `;
 const charList = document.querySelector("#fighters ul");
@@ -32,7 +32,7 @@ const fightDiv = document.querySelector("#app");
 const openButton = document.querySelector("#start");
 const fighterOne = document.querySelector("#fighter-one");
 const fighterTwo = document.querySelector("#fighter-two");
-const main = () => {
+const main = async () => {
   fetchCharacters()
     .then((char) => {
       renderCharacters(charList, char);
@@ -83,24 +83,24 @@ const main = () => {
   const cartoon = document.getElementsByClassName("the-fight");
   // Start the animation
 
-  setTimeout(() => {
+  // setTimeout(() => {
     cartoon.style.back;
   });
   // setTimeout(() => {
   //   // Remove fighters after collision
-  //   fighterOne.style.transition = "opacity 1s";
-  //   fighterTwo.style.transition = "opacity 1s";
-  //   fighterOne.style.opacity = 0;
-  //   fighterTwo.style.opacity = 0;
+  //   //fighterOne.style.transition = "opacity 1s";
+  //   //fighterTwo.style.transition = "opacity 1s";
+  //  // fighterOne.style.opacity = 0;
+  //  // fighterTwo.style.opacity = 0;
 
-  //   // Show the winner after 3 seconds
-  //   setTimeout(() => {
-  //     fighterOne.style.display = "none";
-  //     fighterTwo.style.display = "none";
-  //     winner.classList.remove("hidden");
-  //     winner.style.opacity = 1; // Fade-in effect
-  //   }, 3000); // Wait for the collision animation to finish
-  // }, 2000); // Start after fighters collide
+    // Show the winner after 3 seconds
+    setTimeout(() => {
+      fighterOne.style.display = "none";
+      fighterTwo.style.display = "none";
+      winner.classList.remove("hidden");
+      winner.style.opacity = 1; // Fade-in effect
+    }, 3000); // Wait for the collision animation to finish
+  }, 2000); // Start after fighters collide
 };
 
 main();
