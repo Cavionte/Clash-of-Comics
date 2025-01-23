@@ -84,15 +84,6 @@ export const renderPlayerOne = (fighterOne, playerOneDiv, fighter) => {
   let fightersName = document.createElement("h2");
   fightersName.textContent = fighter.name;
   playerOneDiv.appendChild(fightersName);
-
-  // fighterOne.src = fighter.stats.img;
-  // fighterOne.dataset.sum =
-  //   fighter.stats.intelligence +
-  //   fighter.stats.strength +
-  //   fighter.stats.speed +
-  //   fighter.stats.durability +
-  //   fighter.stats.power +
-  //   fighter.stats.combat;
 };
 
 export const renderPlayerTwo = (fighterTwo, playerTwoDiv, fighter) => {
@@ -114,15 +105,6 @@ export const renderPlayerTwo = (fighterTwo, playerTwoDiv, fighter) => {
   let fightersName = document.createElement("h2");
   fightersName.textContent = fighter.name;
   playerTwoDiv.appendChild(fightersName);
-
-  // fighterTwo.src = fighter.stats.img;
-  // fighterTwo.dataset.sum =
-  //   fighter.stats.intelligence +
-  //   fighter.stats.strength +
-  //   fighter.stats.speed +
-  //   fighter.stats.durability +
-  //   fighter.stats.power +
-  //   fighter.stats.combat;
 };
 
 export const renderBattle = (openButton, fightDiv) => {
@@ -237,5 +219,3 @@ export const renderBattle = (openButton, fightDiv) => {
 // } else {
 //   console.error("Open button or fight container is missing.");
 // }
-
-

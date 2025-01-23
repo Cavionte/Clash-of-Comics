@@ -82,25 +82,6 @@ const main = async () => {
   const winner = document.getElementById("winner");
   const cartoon = document.getElementsByClassName("the-fight");
   // Start the animation
-
-  // setTimeout(() => {
-    cartoon.style.back;
-  });
-  // setTimeout(() => {
-  //   // Remove fighters after collision
-  //   //fighterOne.style.transition = "opacity 1s";
-  //   //fighterTwo.style.transition = "opacity 1s";
-  //  // fighterOne.style.opacity = 0;
-  //  // fighterTwo.style.opacity = 0;
-
-    // Show the winner after 3 seconds
-    setTimeout(() => {
-      fighterOne.style.display = "none";
-      fighterTwo.style.display = "none";
-      winner.classList.remove("hidden");
-      winner.style.opacity = 1; // Fade-in effect
-    }, 3000); // Wait for the collision animation to finish
-  }, 2000); // Start after fighters collide
 };
 
 main();
