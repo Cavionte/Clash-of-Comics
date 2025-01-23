@@ -108,7 +108,7 @@ export const renderPlayerTwo = (fighterTwo, playerTwoDiv, fighter) => {
 };
 
 export const renderBattle = (openButton, fightDiv) => {
-  const fight = document.createElement("dialog");
+  let fight = document.createElement("dialog");
   //fight.innerHTML = "";
   fight.classList.add("the-fight");
   if (!fight) {
