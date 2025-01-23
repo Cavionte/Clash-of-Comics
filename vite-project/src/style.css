@@ -153,15 +153,6 @@ button:focus-visible {
   position: relative;
 
   margin-left: 60px;
-  /* animation-delay: 5s; */
-  /*position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 150px;
-  height: 150px;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;*/
 }
 
 /* .hidden {
@@ -184,16 +175,6 @@ button:focus-visible {
   transform: scaleX(-1);
 }
 .the-fight {
-  /* display: flex;
-  justify-content: space-around;
-  align-items: center; 
-  margin: 20px 0; */
-  /* object-fit: contain; */
-  /* position: fixed; */
-  /* top: 0%;
-  bottom: 0%;
-  width: 100%;
-  height: 100%; */
   background-image: url(src/images/fightdraft.gif);
   background-position: center;
   background-size: 80em;
@@ -254,8 +235,8 @@ button:focus-visible {
 }
 #players-container {
   display: flex;
-  justify-content: space-around; /* Space out the players evenly */
-  align-items: center; /* Align players vertically in the center */
+  justify-content: space-around;
+  align-items: center;
   margin: 20px 0;
 }
 
