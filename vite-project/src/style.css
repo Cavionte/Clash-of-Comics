@@ -104,13 +104,6 @@ button:focus-visible {
   height: 300px;
 }
 
-.fighter {
-  /* position: absolute;
-  top: 50%; */
-  /* transform: translateY(-50%); */
-  /* transition: all 0.5s ease-in-out; */
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -146,17 +139,21 @@ button:focus-visible {
   }
 }
 .fighter-one {
-  animation: fadeOut 3s forwards, slideInLeft 3s ease-out;
+  animation: fadeOut 4s forwards, slideInLeft 3s ease-out;
   border: #000000;
 }
 .fighter-two {
-  animation: fadeOut 3s forwards, slideInRight 3s ease-out;
+  animation: fadeOut 4s forwards, slideInRight 3s ease-out;
   border: #000000;
 }
 
 .winner {
-  animation: fadeIn 20s;
-  /*  animation-delay: 5s; */
+  animation: fadeIn 24s;
+  box-shadow: 3px 3px rgb(255, 255, 255), -1em 0 0.4em rgb(121, 121, 121);
+  position: relative;
+
+  margin-left: 60px;
+  /* animation-delay: 5s; */
   /*position: absolute;
   top: 50%;
   left: 50%;
@@ -191,16 +188,20 @@ button:focus-visible {
   justify-content: space-around;
   align-items: center; 
   margin: 20px 0; */
-  position: fixed;
-  top: 0%;
+  /* object-fit: contain; */
+  /* position: fixed; */
+  /* top: 0%;
   bottom: 0%;
   width: 100%;
-  height: 100%;
+  height: 100%; */
+  background-image: url(src/images/fightdraft.gif);
+  background-position: center;
+  background-size: 80em;
 }
 .the-fight img {
   width: auto;
-  height: 25em;
-  border-radius: 100%;
+  height: 30em;
+  border-radius: 50%;
 }
 
 #playerone img,

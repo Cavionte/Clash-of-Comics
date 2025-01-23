@@ -10,6 +10,7 @@ export const fetchCharacters = () => {
     })
     .then((heroes) => {
       console.log({ heroes });
+
       const fighters = heroes.map((hero) => ({
         id: hero.id,
         name: hero.name,
@@ -21,9 +22,9 @@ export const fetchCharacters = () => {
           power: hero.powerstats.power,
           combat: hero.powerstats.combat,
         },
-        smallImg: `https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/${
-          hero.id
-        }-${hero.name.toLowerCase().replace(/ /g, "-")}.jpg`,
+        smallImg: hero.images.sm.endsWith("/no-portrait.jpg")
+          ? "https://i.pinimg.com/736x/a8/33/9c/a8339cffe5af9c3d99c51d2f20660239.jpg"
+          : hero.images.sm,
       }));
       console.log(fighters);
       return fighters;
