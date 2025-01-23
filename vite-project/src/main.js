@@ -12,12 +12,12 @@ document.querySelector("#app").innerHTML = `
   <header>Clash of Comics</header>
    <div id="players-container">
       <div id="playerone" class='selected'>
-      <img src="src/images/squareup.jpg" alt="placeholder fighter meme" id="placeholder1">
+      <img src="/images/squareup.jpg" alt="placeholder fighter meme" id="placeholder1">
       <h2>Select Fighter</h2>
       </div>
-      <img src="src/images/vs.gif" alt="VS" id="vs-image">
+      <img src="/images/vs.gif" alt="VS" id="vs-image">
       <div id="playertwo" class='selected'>
-      <img src="src/images/squareup.jpg" alt="placeholder fighter meme" id="placeholder2">
+      <img src="/images/squareup.jpg" alt="placeholder fighter meme" id="placeholder2">
       <h2>Select Fighter</h2>
       </div>
     </div>

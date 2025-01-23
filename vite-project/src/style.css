@@ -175,7 +175,7 @@ button:focus-visible {
   transform: scaleX(-1);
 }
 .the-fight {
-  background-image: url(src/images/fightdraft.gif);
+  background-image: url(/images/fightdraft.gif);
   background-position: center;
   background-size: 80em;
 }
